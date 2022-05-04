@@ -8,7 +8,7 @@ app.get("/", (req , res ) => {
     res.send("API is running success")
 });
 //endpoint to get the complete chats ex:global
-app.get("/api/chat" , (req , res ) => {
+app.get("/api/chats" , (req , res ) => {
 res.send(chats);
 });
 //endpoint to get particular chats

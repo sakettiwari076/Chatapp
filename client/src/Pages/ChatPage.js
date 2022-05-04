@@ -1,14 +1,13 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect , useState } from 'react';
-import chats from '../../../backend/data/data'
-
+// import { chats } from '../../../Backend/data/data';
 const ChatPage = () => {
-  const [Chats, setChats] = useState([])
+  const [chats, setChats] = useState([])
 
         const fetchChats = async () => {
         const data = await axios.get('/api/chats');
-        console.log(data);
+        setChats(data);
     };
     useEffect (() => {
     fetchChats() ;
@@ -17,10 +16,9 @@ const ChatPage = () => {
   return (
 
     <div>
-    {chats.map((chat) => (
-       <div> {chat.chatName}
-       </div>
-  ))}
+      cha
+       
+  
   </div>
   );
 };

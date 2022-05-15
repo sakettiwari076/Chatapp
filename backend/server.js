@@ -1,9 +1,11 @@
+// I am the parent of all the files in backend dont ever forget me 
 const express = require("express");
 const { chats } = require("./data/data");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const colors = require("colors")
 const userRoutes = require("./routes/userRoutes")
+const chatRoutes = require("./routes/chatRoutes")
 const {notFound, errorHandler } = require('./middleware/errorMiddleware')
 dotenv.config();
 connectDB();
@@ -16,6 +18,7 @@ app.use(express.json()); //To accept json data registration was not happening as
 
 //endpoint to get the complete chats ex:global
 app.use("/api/user" , userRoutes)
+app.use("/api/chat", chatRoutes);
 app.use(notFound);
 app.use(errorHandler);
 

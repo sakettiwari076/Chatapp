@@ -5,10 +5,12 @@ const generateToken = require("../config/generateToken");
 //@description     Get or Search all users
 //@route           GET /api/user?search=
 //@access          Public
+// allUsers is the function to search the user which  is define here 
 const allUsers = asyncHandler(async (req, res) => {
   const keyword = req.query.search
     ? {
         $or: [
+          
           { name: { $regex: req.query.search, $options: "i" } },
           { email: { $regex: req.query.search, $options: "i" } },
         ],
